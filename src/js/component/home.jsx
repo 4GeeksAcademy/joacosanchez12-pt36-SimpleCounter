@@ -1,10 +1,6 @@
 import React from "react";
 import SecondsCounter from "./secondsCounter";
 
-//import img
-import rigoImage from "../../img/rigo-baby.jpg";
-
-//create your first component
 const Home = () => {
     let seconds = 0; 
     let intervalId = null; 
@@ -41,30 +37,24 @@ const Home = () => {
     };
 
     const updateDisplay = () => {
-        const container = document.getElementById("timer-container");
-        if (container) {
-            container.innerHTML = `
-                <p>Segundos: ${seconds}</p>
-                <button id="reset-button" class="reset-button">Reset Timer</button>
-                <button id="stop-button" class="stop-button">Stop Timer</button>
-                <button id="resume-button" class="resume-button">Resume Timer</button>
-            `;
-           
-            document.getElementById("reset-button").onclick = resetTimer;
-            document.getElementById("stop-button").onclick = stopTimer;
-            document.getElementById("resume-button").onclick = resumeTimer;
-        }
+        document.getElementById("seconds-counter").innerText = seconds;
     };
 
-    
-    startTimer();
 
-    
-    updateDisplay();
+    startTimer();
 
     return (
         <div id="timer-container">
-            {/*  */}
+            <div className="clock-icon">
+                <i className="far fa-clock"></i>
+            </div>
+            <div className="counter-text" id="seconds-counter">{seconds}</div>
+            <div className="button-container">
+                <button onClick={startTimer} className="button">Start</button>
+                <button onClick={stopTimer} className="button">Stop</button>
+                <button onClick={resetTimer} className="button">Reset</button>
+                <button onClick={resumeTimer} className="button">Resume</button>
+            </div>
         </div>
     );
 };

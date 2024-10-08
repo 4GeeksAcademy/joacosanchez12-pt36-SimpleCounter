@@ -1,69 +1,59 @@
 body {
-    background: linear-gradient(135deg, rgba(240, 230, 142, 0.8), rgba(249, 198, 213, 0.8)), 
+    background: linear-gradient(135deg, rgba(240, 230, 142, 0.8), rgba(249, 198, 213, 0.8)),
                 url('https://4geeksacademy.com/static/dc42e38caa9db517ddea28bea5e40d02/e6a88/4geeksacademy-logo-old.png');
     background-size: cover;
     background-position: center;
     font-family: 'Arial', sans-serif;
-    margin: 0; /* Sin margen */
-}
-
-.counter-container {
+    margin: 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 20px;
-    border-radius: 10px;
-    margin-top: 100px; /* Reduce el margen superior para una mejor estética */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    background-color: rgba(255, 255, 255, 0.9); /* Fondo blanco con opacidad */
+    height: 100vh; 
 }
 
-.counter-box {
-    background-color: #222;
-    color: #fff;
-    font-size: 50px;
-    width: 100px; /* Aumentar el ancho para que quepa mejor el texto */
-    height: 100px;
-    margin: 0 10px; /* Aumenta el margen para un mejor espaciado */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 10px;
-    font-family: 'Courier New', Courier, monospace;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+#timer-container {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    text-align: center;
 }
 
-.clock-icon {
-    font-size: 40px;
-    color: #fff;
+.counter-text {
+    font-size: 48px;
+    margin: 20px 0;
+    color: #333;
 }
 
 .button-container {
     display: flex;
     justify-content: center;
-    margin-top: 20px; /* Espaciado entre los botones y el contador */
+    gap: 20px; 
 }
 
 .button {
-    margin: 0 10px; /* Espaciado entre botones */
     padding: 12px 24px;
     font-size: 18px;
     cursor: pointer;
-    background-color: #6C757D; /* Color base */
-    color: #fff;
+    background-color: #007bff; 
     border: none;
     border-radius: 8px;
-    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    transition: background-color 0.3s, transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 .button:hover {
-    background-color: #495057; /* Color al pasar el mouse */
-    transform: scale(1.05);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    background-color: #0056b3; 
+    transform: translateY(-2px);
 }
 
 .button:active {
-    background-color: #343a40; /* Color al hacer clic */
-    transform: scale(0.98);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    background-color: #004085; 
+    transform: translateY(0);
+}
+
+.clock-icon {
+    font-size: 60px; 
+    color: #007bff; 
+    margin-bottom: 20px;
 }
