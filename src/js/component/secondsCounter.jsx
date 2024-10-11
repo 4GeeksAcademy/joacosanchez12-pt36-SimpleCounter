@@ -1,25 +1,28 @@
 import React from "react";
 
-const SecondsCounter = ({ seconds }) => {
-    
-    const five = Math.floor(seconds / 10000) % 10; 
-    const four = Math.floor(seconds / 1000) % 10; 
-    const three = Math.floor(seconds / 100) % 10; 
-    const two = Math.floor(seconds / 10) % 10;
-    const one = Math.floor(seconds / 1) % 10;
+const Digit = (props) => {
 
     return (
-        <div className="counter-container">
-            <div className="counter-box clock-icon">
-                <i className="far fa-clock"></i> {/* Iria un icono :) */}
+        <div className="card text-bg-dark mb-3 m-1">
+            <div className="card-body">
+                <h5 className="card-title">{props.digito}</h5>
             </div>
-            <div className="counter-box">{five}</div>
-            <div className="counter-box">{four}</div>
-            <div className="counter-box">{three}</div>
-            <div className="counter-box">{two}</div>
-            <div className="counter-box">{one}</div>
         </div>
-    );
-};
+    )
+}
 
-export default SecondsCounter;
+const SecondsCouter = (props) => {
+
+    return (
+        <div className="d-flex">            
+            <Digit digito={Math.floor(props.counter /100000 % 10)}/>
+            <Digit digito={Math.floor(props.counter /10000 % 10)}/>
+            <Digit digito={Math.floor(props.counter /1000 % 10)}/>
+            <Digit digito={Math.floor(props.counter /100 % 10)}/>
+            <Digit digito={Math.floor(props.counter / 10 % 10)}/>
+            <Digit digito={props.counter % 10}/>                                
+        </div>
+    )
+}
+
+export default SecondsCouter;
